@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@environments/environment';
+import {} from '@services/token.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,10 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/api/v1/auth/login`,{
       email,
       password
-    });
+    })
+    .pipe(
+      tap(response=>)
+    )
   }
 
   register(name:string, email:string, password:string){
@@ -29,6 +33,10 @@ export class AuthService {
 
   isAvalable(email:string){
     return this.http.post<{isAvailable:boolean}>(`${this.apiUrl}/api/v1/auth/is-available`,{email});
+  }
+
+  recovery(email:string){
+  return this.http.post(`${this.apiUrl}/api/v1/auth/recovery`,{email});
   }
 
 
