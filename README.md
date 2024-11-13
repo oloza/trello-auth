@@ -1,31 +1,3 @@
-# TrelloAuth
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
 *********************************************
 
 ========
@@ -142,11 +114,38 @@ ingresa token y nueva contrañeap ara el cambio
 
 =======
 proteger acceso
-===========
+========
 tap no daña el flujo se ejecuta antes de las subscripcion
 utilizar guardianes  guards para controlar los accesos
 tipo CanActivate
 el guard se utiliza en el routing.module
+
+=======
+donde guardar los tokens
+========
+en web tenemos 4 formas
+localStorage ( menos segura no recomendable)
+sessionStorage(volatil cuando el usuario cierre la pestaña se elimina)
+webSequal(acceder datos no para guar)
+cookies(recomendale dentro de una cookie), 
+
+la sesion por cookies variable httponly solo modificable en el backend, solo si se maneja desede el backend
+
+cookies desde el servidor  se transmiten entre ida y venida de solicitudes
+debilidad esa cookie hay que manterla en el servidor, con escalamiento horizontal no 
+jwt es statelees no guarda la sesion en el backend, genere un token con las llaves
+
+las cookies solo funcionan en web
+para android ios se debe usar jwt
+
+¿dónde guardar el token?
+se va guardar en una cookie desde el lado del browser
+implementar un interceptor donde pida validacion
+instalar la libreria 
+	npm i typescript-cookie
+
+la cookie tiene su propiedad de expiración al igual que el JWT
+
 
 
 
