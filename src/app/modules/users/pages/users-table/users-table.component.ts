@@ -1,17 +1,20 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 
 import { DataSourceUser } from './data-source';
+import { UsersService } from '@services/users.service';
 
 @Component({
   selector: 'app-users-table',
   templateUrl: './users-table.component.html'
 })
-export class UsersTableComponent  {
+export class UsersTableComponent implements OnInit  {
 
   dataSource = new DataSourceUser();
   columns: string[] = ['id', 'avatar', 'name', 'email'];
 
-  constructor() {
+  constructor(
+    private usersService:UsersService
+  ) {
     this.dataSource.init([
       {
         id: 1,
@@ -33,5 +36,9 @@ export class UsersTableComponent  {
       }
     ]);
   }
+
+ngOnInit(): void {
+  
+}
 
 }

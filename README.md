@@ -152,3 +152,8 @@ Redirects para recuperar sesión
 otra forma es usando guards
 se hace redirect cuando el usaurio esta logeado
 
+=======
+obteniendo users
+========
+los endpoint se debe consultar con el accessToken
+
