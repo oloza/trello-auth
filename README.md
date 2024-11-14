@@ -146,6 +146,9 @@ instalar la libreria
 
 la cookie tiene su propiedad de expiración al igual que el JWT
 
-
-
+=======
+Redirects para recuperar sesión
+========
+otra forma es usando guards
+se hace redirect cuando el usaurio esta logeado
 
