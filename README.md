@@ -127,7 +127,7 @@ en web tenemos 4 formas
 localStorage ( menos segura no recomendable)
 sessionStorage(volatil cuando el usuario cierre la pestaña se elimina)
 webSequal(acceder datos no para guar)
-cookies(recomendale dentro de una cookie), 
+git kies(recomendale dentro de una cookie), 
 
 la sesion por cookies variable httponly solo modificable en el backend, solo si se maneja desede el backend
 
@@ -171,3 +171,9 @@ user?.name , ? maneja los nulos
 para no hacer muchos request podemos usar un observable  user$
 en layout se suscribe al observable
 todo observable necesita un estado inicial
+
+=======
+interceptor 
+========
+interceptar cualquier peticion y agregar cualquier tipo de logica 
+necesita un contexto
