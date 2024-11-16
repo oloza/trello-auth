@@ -164,3 +164,10 @@ obtener perfil
 ========
 done
 
+=======
+reactividad en profile
+========
+user?.name , ? maneja los nulos
+para no hacer muchos request podemos usar un observable  user$
+en layout se suscribe al observable
+todo observable necesita un estado inicial
