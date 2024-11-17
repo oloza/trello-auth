@@ -9,6 +9,8 @@ import {
 import { User } from '@models/user.model';
 
 import { AuthService } from '@services/auth.service';
+import { TokenService } from '@services/token.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -27,7 +29,8 @@ export class NavbarComponent  {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private tokenService:TokenService
   ) {}
 
 
@@ -35,4 +38,9 @@ export class NavbarComponent  {
     this.authService.logout();
     this.router.navigate(['/login']);
   }
+
+  isValidToken(){
+    console.log(this.tokenService.isValidToken());
+  }
+
 }

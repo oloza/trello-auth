@@ -35,10 +35,24 @@ getDataUser(){
     })
     .pipe(
       tap(response =>{
-        this.tokenService.saveToken(response.access_token)
+        this.tokenService.saveToken(response.access_token);
+        this.tokenService.saveRefreshToken(response.access_token);
       }
       )
     )
+  }
+
+  refreshToken(refreshToken:string){
+    return this.http.post<ResponseLogin>(`${this.apiUrl}/api/v1/auth/refresh-token`,
+      {refreshToken}
+      )
+      .pipe(
+        tap(response =>{
+          this.tokenService.saveToken(response.access_token);
+          this.tokenService.saveRefreshToken(response.access_token);
+        }
+        )
+      )   
   }
 
   register(name:string, email:string, password:string){
@@ -69,7 +83,7 @@ getDataUser(){
   }
 
   getProfile(){
-    // const token=this.tokenService.getToken();
+    
     return this.http.get<User>(`${this.apiUrl}/api/v1/auth/profile`,
       {context:checkToken()})
       .pipe(
@@ -83,4 +97,7 @@ getDataUser(){
   logout(){
     this.tokenService.removetoken();
   }
+
+ 
+
 }

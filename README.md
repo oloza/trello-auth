@@ -177,3 +177,31 @@ interceptor
 ========
 interceptar cualquier peticion y agregar cualquier tipo de logica 
 necesita un contexto
+
+=======
+cerrar sesion cuando el token expira 
+========
+hays dos formas de cerrar la sesion
+1. es leyendo los estados del backend
+2. saber la fecha de vencimiento del token en el el cliente 
+el 401 no sólo es para decir que el token expiro
+
+=======
+implementar cierre de sesion
+=======
+el token de platzi es de 5 horas
+depende del uso
+
+=======
+qué es el refreshToken
+=======
+se puede implementar en el guardian
+pero es mejor en el interceptor
+
+
+=======
+refresh token en el interceptro
+=======
+
+
+
